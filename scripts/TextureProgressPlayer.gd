@@ -1,12 +1,12 @@
 extends TextureProgress
 
 var tex_def = preload("res://art/textureDefault.png")
-var tex0 = preload("res://art/texture.png")
-var tex1 = preload("res://art/texture3.png")
-var tex2 = preload("res://art/texture4.png")
+var tex0 = preload("res://art/tex1.png")
+var tex1 = preload("res://art/tex2.png")
+var tex2 = preload("res://art/tex3.png")
 
 var arr = [tex0,tex1,tex2]
-var nums = [48,77,92]
+var nums = [47,67,86]
 var target = 100
 
 signal result(ar)
@@ -18,7 +18,7 @@ func _ready():
 
 func _process(delta):
 	if not $Timer.is_stopped():
-		self.value = 100 - ($Timer.time_left * 50)
+		self.value = 100 - ($Timer.time_left * 100)
 	else:
 		self.value = 0
 	
@@ -38,6 +38,8 @@ func peace():
 	$Timer.stop()
 
 func check_hit():
-	#print(str(self.value) + ' value')
-	#print(str(target) + ' target')
-	emit_signal('result', !self.value < target-10 and !self.value > target+10)
+	if not !self.value < target-1 and !self.value > target+12:
+		$Timer.stop()
+		fighting()
+		
+	emit_signal('result', !self.value < target-3 and !self.value > target+12)

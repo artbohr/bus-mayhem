@@ -19,7 +19,7 @@ func _physics_process(delta):
 	move_and_slide(Vector2(-1000, 0))
 	
 	if fighting:
-		$Camera2D.set_offset(Vector2(rand_range(-200.0, -205.0),rand_range(-1.0, 1.0) * 5.0))
+		$Camera2D.set_offset(Vector2(rand_range(-200.0, -203.0),rand_range(-1.0, 1.0) * 3.0))
 	
 func spawn_enemy():
 		var new_enemy = enemy.instance()
@@ -28,7 +28,7 @@ func spawn_enemy():
 
 func _on_Timer_timeout():
 	spawn_enemy()
-	$Timer.set_wait_time(rand_range(0.5, 2))
+	$Timer.set_wait_time(rand_range(0.5, 1.7))
 
 func set_behaviour():
 	fighting = true

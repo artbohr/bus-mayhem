@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Bus.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/progress.png" type="Texture" id=3]
-[ext_resource path="res://art/udnerP.png" type="Texture" id=4]
+[ext_resource path="res://art/base.png" type="Texture" id=3]
+[ext_resource path="res://art/goal.png" type="Texture" id=4]
 [ext_resource path="res://scripts/TextureProgress.gd" type="Script" id=5]
 
 [node name="Main" type="Node2D"]
@@ -43,7 +43,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 669.0
+margin_right = 447.0
 margin_bottom = 101.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -70,7 +70,7 @@ _sections_unfolded = [ "Rect", "Textures" ]
 [node name="Timer" type="Timer" parent="Bus/HBoxContainer/TextureProgress" index="0"]
 
 process_mode = 1
-wait_time = 100.0
+wait_time = 50.0
 one_shot = false
 autostart = true
 

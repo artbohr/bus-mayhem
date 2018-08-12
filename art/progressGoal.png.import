@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/textureDefault.png-c492a0f2e1e6bed91f43edcfbc264e49.stex"
+path="res://.import/progressGoal.png-a32efdf1f767ed066026daa04a372278.stex"
 
 [deps]
 
-source_file="res://art/textureDefault.png"
-source_md5="bf50a44e1e62a1e8343827a0d2ca7a1e"
+source_file="res://art/progressGoal.png"
+source_md5="36ad6b61531478cc56cfdb7558e20b89"
 
-dest_files=[ "res://.import/textureDefault.png-c492a0f2e1e6bed91f43edcfbc264e49.stex" ]
-dest_md5="46b23644d411ec9efac8c82b5d69f8fb"
+dest_files=[ "res://.import/progressGoal.png-a32efdf1f767ed066026daa04a372278.stex" ]
+dest_md5="f1a3f471eaf1435fc1706989a108c48b"
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://art/textureDefault.png" type="Texture" id=3]
-[ext_resource path="res://art/under.png" type="Texture" id=4]
+[ext_resource path="res://art/fill.png" type="Texture" id=4]
 [ext_resource path="res://scripts/TextureProgressPlayer.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -16,7 +16,7 @@ extents = Vector2( 10.2947, 33.0569 )
 custom_solver_bias = 0.0
 extents = Vector2( 22.1306, 17.2837 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 3
@@ -58,10 +58,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -279.0
-margin_top = -137.0
-margin_right = 129.0
-margin_bottom = -106.0
+margin_left = -123.0
+margin_top = -127.0
+margin_right = 111.0
+margin_bottom = -107.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -87,7 +87,7 @@ _sections_unfolded = [ "Textures" ]
 [node name="Timer" type="Timer" parent="TextureProgress" index="0"]
 
 process_mode = 1
-wait_time = 2.0
+wait_time = 1.0
 one_shot = false
 autostart = false
 

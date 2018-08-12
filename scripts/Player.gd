@@ -39,7 +39,7 @@ func _on_PlayerArea_area_shape_entered(area_id, area, area_shape, self_shape):
 		emit_signal('fight')
 		
 	elif area.name == 'BusBack':
-		get_tree().change_scene('res://scenes/startgame.tscn')
+		get_tree().change_scene('res://scenes/gameover.tscn')
 		
 func check_hit(ar):
 	if ar:
