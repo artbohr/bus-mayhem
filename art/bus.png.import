@@ -7,10 +7,7 @@ path="res://.import/bus.png-0eb4317ca90c8a3e548c09c2fc3a89e7.stex"
 [deps]
 
 source_file="res://art/bus.png"
-source_md5="e7b769dd4c3754d9db2e20497e3c44af"
-
 dest_files=[ "res://.import/bus.png-0eb4317ca90c8a3e548c09c2fc3a89e7.stex" ]
-dest_md5="64a1240944527a1ad9c563d12a850caf"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/goal.png-1041064c2dac9de8811ae2bd166efcff.stex"
 [deps]
 
 source_file="res://art/goal.png"
-source_md5="ac4b797d42a09d996e07b39dea43507e"
-
 dest_files=[ "res://.import/goal.png-1041064c2dac9de8811ae2bd166efcff.stex" ]
-dest_md5="f25d4cfe486c6ad1cba9f05a80c9ac84"
 
 [params]
 

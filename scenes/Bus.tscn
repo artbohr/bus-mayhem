@@ -1,21 +1,33 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Bus.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://art/bus.png" type="Texture" id=4]
+[ext_resource path="res://art/bus1.png" type="Texture" id=4]
+[ext_resource path="res://art/b01.png" type="Texture" id=5]
+[ext_resource path="res://art/b02.png" type="Texture" id=6]
+[ext_resource path="res://sound/3.wav" type="AudioStream" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 535.123, 36.0799 )
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 36.3906 )
+extents = Vector2( 535.123, 36.0799 )
 
 [sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 36.3906 )
+
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 32.6826 )
@@ -32,17 +44,28 @@ player = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -70.2552, -49.4378 )
-scale = Vector2( 3.3638, 1.22126 )
+visible = false
+position = Vector2( -4.25551, -49.4378 )
+scale = Vector2( 1.12524, 1 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 12.6854, -48.5843 )
+scale = Vector2( 1.10893, 0.884771 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -63.7954, 2.85688 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Camera2D" type="Camera2D" parent="." index="2"]
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
 
 offset = Vector2( -200, 0 )
 anchor_mode = 1
@@ -69,14 +92,14 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Offset" ]
 
-[node name="Timer" type="Timer" parent="." index="3"]
+[node name="Timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.5
 one_shot = false
 autostart = true
 
-[node name="BusBack" type="Area2D" parent="." index="4"]
+[node name="BusBack" type="Area2D" parent="." index="5"]
 
 light_mask = 2
 position = Vector2( 503.672, -68.3221 )
@@ -94,11 +117,11 @@ _sections_unfolded = [ "Collision", "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BusBack" index="0"]
 
 light_mask = 2
-position = Vector2( 0, -2.64076 )
-shape = SubResource( 2 )
+position = Vector2( -7.21997, -2.64076 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="5"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="6"]
 
 position = Vector2( -52.345, -83.9325 )
 input_pickable = false
@@ -113,7 +136,18 @@ _sections_unfolded = [ "Collision", "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
 position = Vector2( -253.602, 11.7325 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
+
+[node name="KillSound" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

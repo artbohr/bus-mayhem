@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://art/textureDefault.png" type="Texture" id=3]
 [ext_resource path="res://art/fill.png" type="Texture" id=4]
 [ext_resource path="res://scripts/TextureProgressPlayer.gd" type="Script" id=5]
+[ext_resource path="res://font/Anton-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://art/arrow.png" type="Texture" id=7]
+[ext_resource path="res://art/characters/p_left.png" type="Texture" id=8]
+[ext_resource path="res://art/characters/p_straight.png" type="Texture" id=9]
+[ext_resource path="res://art/characters/p_right.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,6 +20,28 @@ extents = Vector2( 10.2947, 33.0569 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 22.1306, 17.2837 )
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -27,7 +54,9 @@ _sections_unfolded = [ "Collision", "collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+visible = false
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -58,10 +87,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -123.0
-margin_top = -127.0
-margin_right = 111.0
-margin_bottom = -107.0
+margin_left = -118.0
+margin_top = -183.0
+margin_right = 116.0
+margin_bottom = -163.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -90,6 +119,60 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="Label" type="Label" parent="TextureProgress" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 92.0
+margin_top = -49.0
+margin_right = 140.0
+margin_bottom = -19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "SPACE"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="TextureRect" type="TextureRect" parent="TextureProgress/Label" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = -40.0
+margin_right = 176.0
+margin_bottom = 131.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="4"]
+
+position = Vector2( 1.91302, -18.147 )
+scale = Vector2( 0.256926, 0.241964 )
+frames = SubResource( 4 )
+animation = "default"
+frame = 1
+playing = true
 
 [connection signal="area_shape_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_shape_entered"]
 

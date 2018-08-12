@@ -18,7 +18,7 @@ func _physics_process(delta):
 	else:
 		move = 0
 	
-	if Input.is_action_just_pressed('ui_battle'):
+	if Input.is_action_just_pressed('ui_battle') and fighting:
 		emit_signal('shoot')
 	
 	move_and_slide(Vector2(move, 0))
@@ -39,7 +39,7 @@ func _on_PlayerArea_area_shape_entered(area_id, area, area_shape, self_shape):
 		emit_signal('fight')
 		
 	elif area.name == 'BusBack':
-		get_tree().change_scene('res://scenes/gameover.tscn')
+		get_tree().change_scene('res://scenes/GameOver.tscn')
 		
 func check_hit(ar):
 	if ar:

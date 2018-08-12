@@ -7,10 +7,7 @@ path="res://.import/fill.png-d88074779a7a4e0fc4c23ead5413ef63.stex"
 [deps]
 
 source_file="res://art/fill.png"
-source_md5="fc6a39c75c984f9c42ae6d1f85e01a0d"
-
 dest_files=[ "res://.import/fill.png-d88074779a7a4e0fc4c23ead5413ef63.stex" ]
-dest_md5="d9b924c80087935640c04e89c5cc5a10"
 
 [params]
 

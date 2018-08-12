@@ -21,6 +21,11 @@ func _process(delta):
 		self.value = 100 - ($Timer.time_left * 100)
 	else:
 		self.value = 0
+		
+	if !self.value < target-6 and !self.value > target+12:
+		$Label.show()
+	else:
+		$Label.hide()
 	
 func get_r_texture():
 	randomize()

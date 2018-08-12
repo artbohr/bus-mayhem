@@ -7,10 +7,7 @@ path="res://.import/road.png-5871c42b157e703194fb5971374a10a0.stex"
 [deps]
 
 source_file="res://art/road.png"
-source_md5="4ccda18a71b0a6934e850f7ac97baeb4"
-
 dest_files=[ "res://.import/road.png-5871c42b157e703194fb5971374a10a0.stex" ]
-dest_md5="d44b7694e07589929f9b2866c563050e"
 
 [params]
 

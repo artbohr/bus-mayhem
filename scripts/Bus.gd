@@ -34,4 +34,5 @@ func set_behaviour():
 	fighting = true
 	
 func set_peace():
+	$KillSound.play()
 	fighting = false

@@ -7,10 +7,7 @@ path="res://.import/tex2.png-8de6cc102a3cefc261a8723008ea068e.stex"
 [deps]
 
 source_file="res://art/tex2.png"
-source_md5="cedd6843f62deccc329720266dd66a46"
-
 dest_files=[ "res://.import/tex2.png-8de6cc102a3cefc261a8723008ea068e.stex" ]
-dest_md5="af88872247247785df72fc2325b3f77b"
 
 [params]
 
